@@ -1,0 +1,135 @@
+:root {
+    --primary-blue: #3B3DC5; 
+    --bright-green: #CBF283;  
+    --soft-yellow: #FFD662;  
+    --soft-pink: #FF77E9;    
+    --background-white: rgba(255, 255, 255, 0.2);
+    --white: #F7F7F7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+section {
+    background-color: var(--primary-blue);
+    position: relative; 
+    overflow: hidden; /* Hide any overflow from shapes */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 500px;
+}
+
+.grid div:nth-child(2) {
+    background-color: var(--bright-green);
+    position: relative; 
+}
+
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: center;
+    margin-top: 5rem;
+    margin-left: 9rem;
+    color: var(--bright-green);
+    position: relative; /* Allow absolute positioning of shapes */
+    z-index: 10; 
+}
+
+.junior {
+    font-weight: 400;
+    text-align: left;
+}
+
+.paragraph {
+    max-width: 600px;
+    margin-top: 0.5rem; 
+    text-align: left; 
+}
+
+.wrapper {
+    display: flex;
+    align-items: left;
+    padding-top: 20px;
+    font-size: x-small;
+}
+
+.left {
+    max-width: 300px;
+}
+
+.right {
+    max-width: 300px;
+    margin-left: 50px;
+}
+
+/* Abstract Shapes */
+section::before,
+section::after,
+.grid div:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    background: var(--background-white);
+    z-index: 1; /* Ensure shapes are behind the text */
+}
+
+/* Circle Shape */
+section::before {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    top: -50px;
+    left: -50px;
+}
+
+/* Vertical Zigzag Line */
+section::after {
+    width: 2px; /* Narrow width for a vertical line */
+    height: 300px; 
+    top: 145px; 
+    left: 50rem; /* Adjust left position as needed */
+    background-image: linear-gradient(180deg, #f7f7f7 50%, transparent 50%); /* 180deg for vertical zigzag */
+    background-size: 10px 10px; /* Adjust the size of the zigzag pattern */
+    
+}
+
+
+/* Small Square Shape */
+.grid div:nth-child(2)::before {
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    right: -20px;
+    transform: rotate(45deg); /* Rotate to make it look abstract */
+}
+
+.grid div:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: var(--bright-green); 
+    border-radius: 50%;
+    bottom: -25px;
+    left: 30%;
+    z-index: 1;
+}
+
+.intro-text::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: var(--background-white); 
+    border-radius: 50%;
+    top: -35px;
+    right: -35px;
+    z-index: 1;
+    opacity: 20;
+}
