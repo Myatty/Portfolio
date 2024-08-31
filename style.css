@@ -1,135 +1,270 @@
 :root {
-    --primary-blue: #3B3DC5; 
-    --bright-green: #CBF283;  
-    --soft-yellow: #FFD662;  
-    --soft-pink: #FF77E9;    
-    --background-white: rgba(255, 255, 255, 0.2);
-    --white: #F7F7F7;
+  --primary-blue: #3b3dc5;
+  --bright-green: #cbf283;
+  --soft-yellow: #ffd662;
+  --soft-pink: #ff77e9;
+  --background-white: rgba(255, 255, 255, 0.2);
+  --white: #f7f7f7;
+  --light-coral: rgb(136, 155, 187);
+  --second-text: #5051ae;
+}
+
+body{
+    scroll-behavior: smooth;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-}
-
-section {
-    background-color: var(--primary-blue);
-    position: relative; 
-    overflow: hidden; /* Hide any overflow from shapes */
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    height: 500px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 430px;
+  background-color: var(--primary-blue);
+  position: relative;
+  overflow: hidden; /* Hide any overflow from shapes */
 }
 
 .grid div:nth-child(2) {
-    background-color: var(--bright-green);
-    position: relative; 
+  background-color: var(--bright-green);
+  position: relative;
 }
 
 .intro-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    justify-content: center;
-    margin-top: 5rem;
-    margin-left: 9rem;
-    color: var(--bright-green);
-    position: relative; /* Allow absolute positioning of shapes */
-    z-index: 10; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-left: 9rem;
+  color: var(--bright-green);
+  position: relative; /* Allow absolute positioning of shapes */
+  z-index: 10;
 }
 
 .junior {
-    font-weight: 400;
-    text-align: left;
+  font-weight: 400;
+  text-align: left;
 }
 
 .paragraph {
-    max-width: 600px;
-    margin-top: 0.5rem; 
-    text-align: left; 
+  max-width: 600px;
+  margin-top: 0.5rem;
+  text-align: left;
 }
 
 .wrapper {
-    display: flex;
-    align-items: left;
-    padding-top: 20px;
-    font-size: x-small;
+  display: flex;
+  align-items: left;
+  padding-top: 20px;
+  font-size: x-small;
 }
 
 .left {
-    max-width: 300px;
+  max-width: 300px;
 }
 
 .right {
-    max-width: 300px;
-    margin-left: 50px;
+  max-width: 300px;
+  margin-left: 50px;
 }
 
 /* Abstract Shapes */
 section::before,
 section::after,
 .grid div:nth-child(2)::before {
-    content: "";
-    position: absolute;
-    background: var(--background-white);
-    z-index: 1; /* Ensure shapes are behind the text */
+  content: "";
+  position: absolute;
+  background: var(--background-white);
+  z-index: 1; /* Ensure shapes are behind the text */
 }
 
 /* Circle Shape */
 section::before {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    top: -50px;
-    left: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  top: -50px;
+  left: -50px;
 }
 
-/* Vertical Zigzag Line */
+/* Vertical Straight Line (Long) */
+section::before {
+  content: "";
+  width: 2px; /* Narrow width for a vertical line */
+  height: 191px; /* Long height for a vertical line */
+  top: 180px;
+  left: 64rem; /* Adjust left position as needed */
+  background-color: #f7f7f7; /* Solid line color */
+  position: absolute;
+  z-index: 1; /* Ensure shapes are behind the text */
+}
+
+/* Horizontal Straight Line */
 section::after {
-    width: 2px; /* Narrow width for a vertical line */
-    height: 300px; 
-    top: 145px; 
-    left: 50rem; /* Adjust left position as needed */
-    background-image: linear-gradient(180deg, #f7f7f7 50%, transparent 50%); /* 180deg for vertical zigzag */
-    background-size: 10px 10px; /* Adjust the size of the zigzag pattern */
-    
+  content: "";
+  width: 190px; /* Wide width for a horizontal line */
+  height: 2px; /* Narrow height for a horizontal line */
+  top: 370px; /* Adjust the vertical position as needed */
+  left: 52.25rem; /* Adjust the horizontal position as needed */
+  background-color: #f7f7f7; /* Solid line color */
+  position: absolute;
+  z-index: 1; /* Ensure shapes are behind the text */
 }
 
+/* Vertical Straight Line (Short) */
+.grid div:nth-child(3)::before {
+  content: "";
+  width: 2px; /* Narrow width for a vertical line */
+  height: 42px; /* Short height for the second vertical line */
+  top: 250px; /* Adjust the top position as needed */
+  left: 43.2rem; /* Adjust the left position relative to the div */
+  background-color: #f7f7f7; /* Solid line color */
+  position: absolute;
+  z-index: 0; /* Ensure shapes are behind the text */
+}
 
 /* Small Square Shape */
 .grid div:nth-child(2)::before {
-    width: 100px;
-    height: 100px;
-    top: 50px;
-    right: -20px;
-    transform: rotate(45deg); /* Rotate to make it look abstract */
+  width: 100px;
+  height: 100px;
+  top: 50px;
+  right: -20px;
+  transform: rotate(45deg); /* Rotate to make it look abstract */
 }
 
 .grid div:nth-child(2)::after {
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: var(--bright-green); 
-    border-radius: 50%;
-    bottom: -25px;
-    left: 30%;
-    z-index: 1;
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: var(--white);
+  border-radius: 50%;
+  bottom: -25px;
+  left: 30%;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* Additional Short Horizontal Straight Line */
+.grid div:nth-child(3)::after {
+  content: "";
+  width: 50px; /* Short width for the new horizontal line */
+  height: 2px; /* Narrow height for a horizontal line */
+  top: 100px; /* Adjust the vertical position as needed */
+  left: 52rem; /* Adjust the horizontal position as needed */
+  background-color: #f7f7f7; /* Solid line color */
+  position: absolute;
+  z-index: 1; /* Ensure shapes are behind the text */
 }
 
 .intro-text::before {
-    content: "";
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    background-color: var(--background-white); 
-    border-radius: 50%;
-    top: -35px;
-    right: -35px;
-    z-index: 1;
-    opacity: 20;
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: var(--background-white);
+  border-radius: 50%;
+  top: -35px;
+  right: -35px;
+  z-index: 1;
+  opacity: 20;
+}
+
+/* Circle Shape */
+.intro-text::after {
+  content: "";
+  position: absolute;
+  width: 120px; /* Width of the circle */
+  height: 120px; /* Height of the circle */
+  background-color: var(--background-white); /* Circle color */
+  border-radius: 50%; /* Make it a circle */
+  top: 240px; /* Adjust the top position as needed */
+  left: -50px; /* Move part of the circle outside the left side of the screen */
+  z-index: 1; /* Ensure it's above other content */
+  opacity: 0.3; /* Adjust opacity (make sure it's a value between 0 and 1) */
+}
+
+.image img {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 150px;
+  left: 50rem;
+  border-radius: 4px;
+  z-index: 20;
+}
+
+.brand {
+  width: 200px;
+  height: 200px;
+}
+
+/* Top Left Text */
+.top-left-text {
+  position: absolute; /* Absolute positioning to place it in the viewport */
+  top: 20px; /* Add margin from the top */
+  left: 25px; /* Add margin from the left */
+  z-index: 30; /* Ensure it's above other content */
+}
+
+.top-left-text h3 {
+  color: var(--bright-green); /* Text color */
+  font-size: 1.3rem; /* Adjust font size as needed */
+  margin: 0; /* Remove default margin */
+  font-family: "Playwrite CU", cursive;
+  font-weight: 800;
+}
+
+/* Second Section */
+
+.second-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 500px;
+background-color: #fbfdfb;
+  position: relative;
+}
+
+.se {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: -250px;
+  margin-left: 9rem;
+  color: var(--primary-blue);
+  position: relative; /* Allow absolute positioning of shapes */
+  z-index: 10;
+}
+
+.se h1 {
+  font-weight: 500;
+  align-items: flex-start;
+}
+
+.se p {
+  color: var(--second-text);
+  font-size: smaller;
+}
+
+.dedi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-left: 3rem;
+  color: var(--primary-blue);
+  position: relative; /* Allow absolute positioning of shapes */
+  z-index: 10;
+}
+
+.dedi p{
+    color: var(--second-text);
+    font-size: smaller;
 }
