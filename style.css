@@ -225,9 +225,11 @@ section::after {
 .second-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 500px;
-background-color: #fbfdfb;
+  height: 300px;
+background-color: var(--background-white);
   position: relative;
+  user-select: none;
+  margin-top: 150px;
 }
 
 .se {
@@ -235,15 +237,17 @@ background-color: #fbfdfb;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-top: -250px;
+  margin-top: -220px;
   margin-left: 9rem;
   color: var(--primary-blue);
   position: relative; /* Allow absolute positioning of shapes */
   z-index: 10;
+  
+
 }
 
 .se h1 {
-  font-weight: 500;
+  font-weight: 700;
   align-items: flex-start;
 }
 
@@ -267,4 +271,66 @@ background-color: #fbfdfb;
 .dedi p{
     color: var(--second-text);
     font-size: smaller;
+}
+
+.square-group{
+  display: flex;
+  gap: 7px;
+  margin-left: 100px;
+}
+
+.sqOne{
+  background-color: var(--secondary-color); /* Inner color */
+  border: 1.5px solid var(--primary-blue); /* Blue border/margin */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 50px 0 0 0;
+  opacity: 0.5;
+}
+
+.circleGroup{
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  margin-left: 100px;
+
+  height: 30px;
+}
+
+.circle{
+  background-color: var(--secondary-color); /* Inner color */
+  border: 1.5px solid var(--primary-blue); /* Blue border/margin */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.5;
+  margin-top: -20px;
+}
+
+.sqDotted {
+  width: 60px; /* Size of the square */
+  height: 60px; /* Size of the square */
+  background-color: var(--background-color); /* Background color of the square */
+  background-image: radial-gradient(var(--primary-blue) 20%, transparent 20%);
+  background-size: 10px 10px; /* Adjusts the size of the dots */
+  opacity: 0.4;
+  margin-left: 150px;
+
+}
+
+.dotted{
+  width: 60px; /* Size of the square */
+  height: 60px; /* Size of the square */
+  background-color: var(--background-color); /* Background color of the square */
+  background-image: radial-gradient(var(--primary-blue) 20%, transparent 20%);
+  background-size: 10px 10px; /* Adjusts the size of the dots */
+  opacity: 0.4;
+  margin-left: 350px;
+}
+
+/* Third Section */
+
+.third-section{
+ background-color: #3b3dc5;
 }
